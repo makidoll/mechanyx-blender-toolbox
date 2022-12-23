@@ -1057,8 +1057,8 @@ def update_settings_ui(self, context, element=None):
 		split.operator(AddonUpdaterEndBackground.bl_idname, text="", icon="X")
 
 	elif updater.include_branches and \
-                           len(updater.tags) == len(updater.include_branch_list) and not \
-                           updater.manual_only:
+                                 len(updater.tags) == len(updater.include_branch_list) and not \
+                                 updater.manual_only:
 		# No releases found, but still show the appropriate branch.
 		sub_col = col.row(align=True)
 		sub_col.scale_y = 1
@@ -1210,8 +1210,8 @@ def update_settings_ui_condensed(self, context, element=None):
 		split.operator(AddonUpdaterEndBackground.bl_idname, text="", icon="X")
 
 	elif updater.include_branches and \
-                           len(updater.tags) == len(updater.include_branch_list) and not \
-                           updater.manual_only:
+                                 len(updater.tags) == len(updater.include_branch_list) and not \
+                                 updater.manual_only:
 		# No releases found, but still show the appropriate branch.
 		sub_col = col.row(align=True)
 		sub_col.scale_y = 1
@@ -1492,7 +1492,8 @@ def register(bl_info):
 	# Note: updater.include_branch_list defaults to ['master'] branch if set to
 	# none. Example targeting another multiple branches allowed to pull from:
 	# updater.include_branch_list = ['master', 'dev']
-	updater.include_branch_list = None  # None is the equivalent = ['master']
+	# updater.include_branch_list = None  # None is the equivalent = ['master']
+	updater.include_branch_list = ['main']
 
 	# Only allow manual install, thus prompting the user to open
 	# the addon's web page to download, specifically: updater.website
