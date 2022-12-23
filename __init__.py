@@ -1,6 +1,6 @@
 bl_info = {
     "name":
-        "Mechanyx Toolbox",
+        "Mechanyx Blender Toolbox",
     "description":
         "Useful tools to help make things",
     "author":
@@ -11,9 +11,9 @@ bl_info = {
     "warning":
         "",
     "doc_url":
-        "https://github.com/makifoxgirl/blender-mechanyx-toolbox",
+        "https://github.com/makifoxgirl/mechanyx-blender-toolbox",
     "tracker_url":
-        "https://github.com/makifoxgirl/blender-mechanyx-toolbox/issues",
+        "https://github.com/makifoxgirl/mechanyx-blender-toolbox/issues",
     "support":
         "COMMUNITY",
     "category":

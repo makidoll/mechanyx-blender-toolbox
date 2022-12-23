@@ -70,7 +70,7 @@ except Exception as e:
 # not match and have errors. Must be all lowercase and no spaces! Should also
 # be unique among any other addons that could exist (using this updater code),
 # to avoid clashes in operator registration.
-updater.addon = "mechanyx_toolbox"
+updater.addon = "mechanyx_blender_toolbox"
 
 # -----------------------------------------------------------------------------
 # Blender version utils
@@ -1057,8 +1057,8 @@ def update_settings_ui(self, context, element=None):
 		split.operator(AddonUpdaterEndBackground.bl_idname, text="", icon="X")
 
 	elif updater.include_branches and \
-                                 len(updater.tags) == len(updater.include_branch_list) and not \
-                                 updater.manual_only:
+                                       len(updater.tags) == len(updater.include_branch_list) and not \
+                                       updater.manual_only:
 		# No releases found, but still show the appropriate branch.
 		sub_col = col.row(align=True)
 		sub_col.scale_y = 1
@@ -1210,8 +1210,8 @@ def update_settings_ui_condensed(self, context, element=None):
 		split.operator(AddonUpdaterEndBackground.bl_idname, text="", icon="X")
 
 	elif updater.include_branches and \
-                                 len(updater.tags) == len(updater.include_branch_list) and not \
-                                 updater.manual_only:
+                                       len(updater.tags) == len(updater.include_branch_list) and not \
+                                       updater.manual_only:
 		# No releases found, but still show the appropriate branch.
 		sub_col = col.row(align=True)
 		sub_col.scale_y = 1
@@ -1389,12 +1389,12 @@ def register(bl_info):
 
 	# Choose your own repository, must match git name for GitHUb and Bitbucket,
 	# for GitLab use project ID (numbers only).
-	updater.repo = "blender-mechanyx-toolbox"
+	updater.repo = "mechanyx-blender-toolbox"
 
 	# updater.addon = # define at top of module, MUST be done first
 
 	# Website for manual addon download, optional but recommended to set.
-	updater.website = "https://github.com/makifoxgirl/blender-mechanyx-toolbox/"
+	updater.website = "https://github.com/makifoxgirl/mechanyx-blender-toolbox/"
 
 	# Addon subfolder path.
 	# "sample/path/to/addon"
