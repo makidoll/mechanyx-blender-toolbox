@@ -1,6 +1,6 @@
 import bpy
 
-class MoveUvMap(bpy.types.Operator):
+class MoveUvMapOperator(bpy.types.Operator):
 	bl_idname = "mechanyx.move_uv_map"
 	bl_label = "Mechanyx: Move UV map"
 	bl_options = {"REGISTER", "UNDO", "INTERNAL"}

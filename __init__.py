@@ -24,9 +24,13 @@ import bpy
 
 from . import addon_updater_ops
 
-from .operators.move_uv_map import MoveUvMap
+from .settings.sdf_texture_generator_settings import SdfTextureGeneratorSettings
 
-from .panels.uv_maps_mover import UvMapsMover
+from .operators.move_uv_map_operator import MoveUvMapOperator
+from .operators.sdf_texture_generator_operator import SdfTextureGeneratorOperator
+
+from .panels.sdf_texture_generator_panel import SdfTextureGeneratorPanel
+from .panels.uv_maps_mover_panel import UvMapsMoverPanel
 
 @addon_updater_ops.make_annotations
 class MechanyxToolboxAddonPrefs(bpy.types.AddonPreferences):
@@ -77,11 +81,16 @@ class MechanyxToolboxAddonPrefs(bpy.types.AddonPreferences):
 		addon_updater_ops.update_settings_ui_condensed(self, context, col)
 
 classes = (
-    # operators
-    MoveUvMap,
-    # panels
+    # updater
     MechanyxToolboxAddonPrefs,
-    UvMapsMover
+    # settings (property groups)
+    SdfTextureGeneratorSettings,
+    # operators
+    MoveUvMapOperator,
+    SdfTextureGeneratorOperator,
+    # panels
+    UvMapsMoverPanel,
+    SdfTextureGeneratorPanel
 )
 
 # main_register, main_unregister = bpy.utils.register_classes_factory(classes)
@@ -90,12 +99,17 @@ def register():
 	addon_updater_ops.register(bl_info)
 
 	# main_register()
-
 	for cls in classes:
 		try:
 			bpy.utils.register_class(cls)
 		except Exception as e:
 			print("ERROR: Failed to register class {0}: {1}".format(cls, e))
+
+	# register all propery groups
+
+	bpy.types.Scene.mechanyx_sdf_texture_generator_settings = bpy.props.PointerProperty(
+	    type=SdfTextureGeneratorSettings
+	)
 
 def unregister():
 	addon_updater_ops.unregister()

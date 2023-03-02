@@ -1,6 +1,6 @@
 import bpy
 
-class UvMapsMover(bpy.types.Panel):
+class UvMapsMoverPanel(bpy.types.Panel):
 	bl_idname = "DATA_PT_uv_maps_mover"
 	bl_label = "UV Maps Mover"
 	bl_context = "data"
